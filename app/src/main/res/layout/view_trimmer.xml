@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2f3031"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/playerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <!--        <VideoView-->
+            <!--            android:id="@+id/video_loader"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_centerHorizontal="true"-->
+            <!--            android:layout_centerVertical="true" />-->
+
+            <ImageView
+                android:id="@+id/icon_video_play"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/play_button" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/background_video_color">
+
+            <RelativeLayout
+                android:id="@+id/timeFrame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/rounded_textview_video_trim"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textTimeSelection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center"
+                    android:paddingStart="13dp"
+                    android:paddingTop="3.9dp"
+                    android:paddingEnd="13dp"
+                    android:paddingBottom="3.9dp"
+                    android:textColor="#efc43b"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/timeLineFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeFrame"
+                android:paddingTop="6.5dp"
+                android:paddingBottom="6.5dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/black"
+                    android:paddingTop="6.5dp"
+                    android:paddingBottom="6.5dp">
+
+                    <com.example.videoeditorhack.view.TimeLineView
+                        android:id="@+id/timeLineView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
+
+                <SeekBar
+                    android:id="@+id/handlerTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15.6dp"
+                    android:layout_marginTop="6.5dp"
+                    android:layout_marginEnd="15.6dp"
+                    android:layout_marginBottom="6.5dp"
+                    android:max="1000"
+                    android:progressDrawable="@android:color/transparent"
+                    android:secondaryProgress="0"
+                    android:thumb="@drawable/seek_line"
+                    android:visibility="gone" />
+
+                <com.example.videoeditorhack.view.RangeSeekBarView
+                    android:id="@+id/timeLineBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.2dp"
+                    android:layout_marginBottom="3.9dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>
